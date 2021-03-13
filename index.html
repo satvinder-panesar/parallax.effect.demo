@@ -1,0 +1,95 @@
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<style>
+			#container {
+				position: relative;
+				width: 80vw;
+				height: 80vh;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 20px;
+				background-image: url("images/sky.jpg");
+			}
+			img {
+				position: absolute;
+				width: inherit;
+			}			
+			#road {
+				z-index: 20000;
+				top: calc(100% - 250px);
+				height: 250px;
+			}
+			#mountain {
+				z-index: 10000;
+				top: 30vh;
+				height: 250px;
+			}
+			#content {
+				margin-top: 70px;
+			}
+			#message {
+				position: absolute;
+				z-index: 15000;
+				color: white;
+				font-size: 5.5vw;
+				top: 45%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-weight: bolder;
+				width: fit-content;
+			}	
+			#messageText {
+				transform: scaleY(2)
+			}
+			#car {
+				position: absolute;
+				z-index: 40000;
+				top: 58%;
+				left: 52%;
+				transform: translate(-50%, -50%);
+				height: auto;
+				width: 30px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="banner">
+		<h2><center>Parallax Effect</center></h2>
+	</div>
+	<div id="container">
+		<div id="message"><div id="messageText">Scroll to view the effect</div></div>
+		<img id="mountain" src="images/mountain.png" />
+		<img id="road" src="images/road.png" />
+	</div>
+	<div id="content">
+	<h2><center>Watch the above image change with the scroll!</center></h2>
+	</div>	
+	<div id="content">
+	<h3><center>Above is a demo of the Parallax Effect</center></h2>
+	</div>	
+	<div id="content">
+	<h2><center>Watch the above image change with the scroll!</center></h2>
+	</div>	
+	<div id="content">
+	<h3><center>Above is a demo of the Parallax Effect</center></h2>
+	</div>	<div id="content">
+	<h2><center>Watch the above image change with the scroll!</center></h2>
+	</div>	
+	<div id="content">
+	<h3><center>Above is a demo of the Parallax Effect</center></h2>
+	</div>	
+	</body>
+	<script>
+		window.addEventListener('scroll', function( event ) {
+			let mountain = document.getElementById("mountain")
+			let message = document.getElementById("message")
+			const mountainScrollLimit = 150
+			let value = window.scrollY
+			if(value < mountainScrollLimit){
+				mountain.style.marginTop = - value * 0.5 + 'px'
+				message.style.marginTop = value  + 'px'
+			}
+		} )
+	</script>
+</html>
