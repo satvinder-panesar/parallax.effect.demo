@@ -17,13 +17,13 @@
 			}			
 			#road {
 				z-index: 20000;
-				top: calc(100% - 250px);
-				height: 250px;
+				top: calc(100% - 46%);
+				height: 46%;
 			}
 			#mountain {
 				z-index: 10000;
-				top: 30vh;
-				height: 250px;
+				top: 31vh;
+				height: 260px;
 			}
 			#content {
 				margin-top: 70px;
@@ -33,7 +33,7 @@
 				z-index: 15000;
 				color: white;
 				font-size: 5.5vw;
-				top: 45%;
+				top: 42%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 				font-weight: bolder;
@@ -84,7 +84,7 @@
 		window.addEventListener('scroll', function( event ) {
 			let mountain = document.getElementById("mountain")
 			let message = document.getElementById("message")
-			const mountainScrollLimit = 150
+			const mountainScrollLimit = 180
 			let value = window.scrollY
 			if(value < mountainScrollLimit){
 				mountain.style.marginTop = - value * 0.5 + 'px'
